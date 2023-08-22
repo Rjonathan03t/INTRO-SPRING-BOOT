@@ -1,6 +1,5 @@
 package controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import model.Status;
 import Service.StatusService;
 
@@ -14,9 +13,17 @@ public class StatusController {
     public StatusController(StatusService service) {
         this.service = service;
     }
-
-    @GetMapping("/status")
+    @PostMapping("/insert")
+    public Status insertStatus (@RequestBody Status status) throws SQLException {
+        return service.insertStatus(status.getId(), status.getName());
+    }
+    @GetMapping({"/status"})
     public List<Status> getAllStatus() throws SQLException {
         return service.getAllStatus();
     }
+    @GetMapping("/status/{id}/{name}")
+    public Status getById(@PathVariable int id, @PathVariable String name) throws SQLException{
+        return service.getById(id , name);
+    }
+
 }

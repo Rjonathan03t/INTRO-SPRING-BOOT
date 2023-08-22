@@ -18,4 +18,12 @@ public class StatusService {
     public List<Status> getAllStatus() throws SQLException {
         return dao.getAll();
     }
+
+    public Status insertStatus(int id,String name) throws SQLException{
+       return  dao.insert( id, name);
+    }
+
+    public Status getById ( int id , String name) throws  SQLException{
+        return dao.getById(id , name);
+    }
 }
