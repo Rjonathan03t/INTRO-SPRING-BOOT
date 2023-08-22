@@ -19,11 +19,23 @@ public class StatusService {
         return dao.getAll();
     }
 
-    public Status insertStatus(int id,String name) throws SQLException{
-       return  dao.insert( id, name);
+    public Status insertStatus(int id_status,String status_name) throws SQLException{
+       return  dao.insert( id_status, status_name);
     }
 
-    public Status getById ( int id , String name) throws  SQLException{
-        return dao.getById(id , name);
+    public Status getStatusById ( int id_status) throws  SQLException{
+        Status status =  dao.getById(id_status);
+        if ( status == null){
+            System.out.println("Cette ID n'est pas enregistre dans la base");
+        }
+        return status;
+    }
+
+    public Status updateStatus ( int id_status , String status_newName) throws SQLException {
+         return dao.update(id_status, status_newName);
+    }
+
+    public void deleteStatus (int id_status)throws SQLException{
+         dao.delete(id_status);
     }
 }

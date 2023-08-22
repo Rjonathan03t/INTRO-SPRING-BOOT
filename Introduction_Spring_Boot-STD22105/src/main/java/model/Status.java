@@ -8,6 +8,6 @@ import lombok.*;
 @EqualsAndHashCode
 @ToString
 public class Status {
-    private int id;
-    private String name;
+    private int id_status;
+    private String status_name;
 }

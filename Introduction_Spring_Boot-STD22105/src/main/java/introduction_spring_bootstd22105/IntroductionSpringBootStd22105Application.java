@@ -10,7 +10,8 @@ import org.springframework.context.annotation.ComponentScan;
 		"introduction_spring_bootstd22105",
 		"model",
 		"repository",
-		"Service"
+		"Service",
+		"connectionDB"
 })
 public class IntroductionSpringBootStd22105Application {
 	public static void main(String[] args) {
