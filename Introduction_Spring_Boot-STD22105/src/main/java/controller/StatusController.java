@@ -13,17 +13,29 @@ public class StatusController {
     public StatusController(StatusService service) {
         this.service = service;
     }
-    @PostMapping("/insert")
-    public Status insertStatus (@RequestBody Status status) throws SQLException {
-        return service.insertStatus(status.getId(), status.getName());
-    }
-    @GetMapping({"/status"})
+
+    @GetMapping("/get/status")
     public List<Status> getAllStatus() throws SQLException {
         return service.getAllStatus();
     }
-    @GetMapping("/status/{id}/{name}")
-    public Status getById(@PathVariable int id, @PathVariable String name) throws SQLException{
-        return service.getById(id , name);
+    @GetMapping("/get/status/{id}")
+    public Status getById(@PathVariable int id_status) throws SQLException{
+        return service.getStatusById(id_status);
+    }
+
+    @PostMapping("/insert/status")
+    public Status insertStatus (@RequestBody Status status) throws SQLException {
+        return service.insertStatus(status.getId_status(), status.getStatus_name());
+    }
+
+    @PutMapping("/update/status/{id_status}")
+    public Status updateStatus (@PathVariable int id_status , @RequestBody Status status) throws SQLException {
+        return service.updateStatus(id_status, status.getStatus_name());
+    }
+
+    @DeleteMapping("/delete/status")
+    public void deleteStatus ( @RequestBody Status status)throws SQLException{
+        service.deleteStatus(status.getId_status());
     }
 
 }

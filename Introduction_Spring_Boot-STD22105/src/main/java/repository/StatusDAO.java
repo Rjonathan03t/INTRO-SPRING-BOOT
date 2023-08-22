@@ -19,9 +19,9 @@ public class StatusDAO implements StatusDAOInterface {
     }
 
     @Override
-    public Status insert(int id, String name) throws SQLException {
-        Status status = new Status(id , name);
-        String sql = "INSERT INTO status values ("+id+",'"+name+"')";
+    public Status insert(int id_status, String status_name) throws SQLException {
+        Status status = new Status(id_status , status_name);
+        String sql = "INSERT INTO status values ("+id_status+",'"+status_name+"')";
         try ( PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.executeUpdate();
         }
@@ -44,29 +44,38 @@ public class StatusDAO implements StatusDAOInterface {
     }
 
     @Override
-    public Status getById(int id , String name) throws SQLException {
-        Status status  = new Status(id , name);
-        String sql = "SELECT * FROM status where id_status ="+ id;
+    public Status getById(int id_status) throws SQLException {
+        String sql = "SELECT * FROM status where id_status ="+ id_status;
         try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
             ResultSet result = preparedStatement.executeQuery();
             while(result.next()){
-                new Status(
+                return new Status(
                         result.getInt("id_status"),
                         result.getString("status_name")
                 );
             }
         }
-        return status;
+        return null;
     }
 
     @Override
-    public void update(int newId, String newName) {
-
+    public Status update(int id_status, String status_newName) throws SQLException {
+        Status uStatus = new Status (id_status , status_newName);
+        String sql = "UPDATE status SET status_name = '"+ status_newName + "' WHERE id_status = "+id_status;
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+           preparedStatement.executeUpdate();
+        }
+        System.out.println("UPDATE 01");
+        return uStatus;
     }
 
     @Override
-    public void delete(int id) {
-
+    public void delete(int id_status) throws SQLException{
+        String sql = "DELETE FROM status WHERE id_status = "+id_status;
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+            preparedStatement.executeUpdate();
+        }
+        System.out.println("DELETE 01");
     }
 
     private void convertToList(List<Status> allStatus, ResultSet result) throws SQLException {
