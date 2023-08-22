@@ -19,8 +19,14 @@ public class StatusDAO implements StatusDAOInterface {
     }
 
     @Override
-    public Status insert(Status toInsert) {
-        return null;
+    public Status insert(int id, String name) throws SQLException {
+        Status status = new Status(id , name);
+        String sql = "INSERT INTO status values ("+id+",'"+name+"')";
+        try ( PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.executeUpdate();
+        }
+        System.out.println("INSERT 01");
+        return status;
     }
 
     @Override
@@ -38,8 +44,19 @@ public class StatusDAO implements StatusDAOInterface {
     }
 
     @Override
-    public Status getById(int id) {
-        return null;
+    public Status getById(int id , String name) throws SQLException {
+        Status status  = new Status(id , name);
+        String sql = "SELECT * FROM status where id_status ="+ id;
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+            ResultSet result = preparedStatement.executeQuery();
+            while(result.next()){
+                new Status(
+                        result.getInt("id_status"),
+                        result.getString("status_name")
+                );
+            }
+        }
+        return status;
     }
 
     @Override
