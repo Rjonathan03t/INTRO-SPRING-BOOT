@@ -60,9 +60,9 @@ public class StatusDAO implements StatusDAOInterface {
     }
 
     @Override
-    public Status update(int id_status, String status_newName) throws SQLException {
-        Status uStatus = new Status (id_status , status_newName);
-        String sql = "UPDATE status SET status_name = '"+ status_newName + "' WHERE id_status = "+id_status;
+    public Status update(int id_status, String new_status_name) throws SQLException {
+        Status uStatus = new Status (id_status , new_status_name);
+        String sql = "UPDATE status SET status_name = '"+ new_status_name + "' WHERE id_status = "+id_status;
         try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
            preparedStatement.executeUpdate();
         }

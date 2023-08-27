@@ -8,33 +8,21 @@ INSERT INTO posts VALUES
 (7,'Software Development Engineer','hard',10,'Designs, develops and tests software');
 
 INSERT INTO collaborators  VALUES
-(1, 'Krystle', 'McRinn', 'F', '2023-08-03', 'kmcrinn0@gmpg.org', 1),
-(2, 'Sergio', 'Andreas', 'M', '2023-02-23', 'sandreas1@tripod.com', 2),
-(3, 'Norton', 'Burbudge', 'M', '2023-12-07', 'nburbudge2@ycombinator.com', 5),
-(4, 'Osbourn', 'Mussard', 'M', '2023-07-15', 'omussard3@tamu.edu', 5),
-(5, 'Row', 'Konke', 'F', '2023-01-21', 'rkonke4@slate.com', 7),
-(6, 'Rodolfo', 'Tooley', 'M', '2023-04-16', 'rtooley5@ibm.com', 7),
-(7, 'Delaney', 'Slaney', 'M', '2023-02-23', 'dslaney6@sbwire.com', 3),
-(8, 'Kennett', 'Tokell', 'M', '2023-12-10', 'ktokell7@engadget.com', 6),
-(9, 'Osmond', 'Van Dale', 'M', '2023-11-14', 'ovandale8@tumblr.com', 3),
-(10, 'Sarette', 'Salter', 'F', '2023-08-04', 'ssalter9@ezinearticles.com', 4);
+(1, 'Krystle', 'McRinn', 'F', '2023-08-03', 'kmcrinn0@gmpg.org', 1,1),
+(2, 'Sergio', 'Andreas', 'M', '2023-02-23', 'sandreas1@tripod.com', 2,2),
+(3, 'Norton', 'Burbudge', 'M', '2023-12-07', 'nburbudge2@ycombinator.com', 5,2),
+(4, 'Osbourn', 'Mussard', 'M', '2023-07-15', 'omussard3@tamu.edu', 5,2),
+(5, 'Row', 'Konke', 'F', '2023-01-21', 'rkonke4@slate.com', 7,2),
+(6, 'Rodolfo', 'Tooley', 'M', '2023-04-16', 'rtooley5@ibm.com', 7,2),
+(7, 'Delaney', 'Slaney', 'M', '2023-02-23', 'dslaney6@sbwire.com', 3,3),
+(8, 'Kennett', 'Tokell', 'M', '2023-12-10', 'ktokell7@engadget.com', 6,1),
+(9, 'Osmond', 'Van Dale', 'M', '2023-11-14', 'ovandale8@tumblr.com', 3,2),
+(10, 'Sarette', 'Salter', 'F', '2023-08-04', 'ssalter9@ezinearticles.com', 4,3);
 
 INSERT INTO status VALUES
 (1,'President'),
 (2,'Specialist'),
 (3,'Employee');
-
-INSERT INTO collabStatus VALUES
-(1,1,1),
-(2,2,2),
-(3,3,2),
-(4,4,2),
-(5,5,2),
-(6,6,2),
-(7,7,3),
-(8,8,1),
-(9,9,2),
-(10,10,3);
 
 INSERT INTO schedules VALUES
 (1, '2023-06-04 17:55:43', '2023-09-05 18:49:32', 6),

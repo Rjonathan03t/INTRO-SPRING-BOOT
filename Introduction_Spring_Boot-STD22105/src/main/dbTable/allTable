@@ -13,18 +13,13 @@ CREATE TABLE collaborators (
 	sex CHAR(1) CHECK (sex = 'M' OR sex = 'F'),
 	birth_date VARCHAR(100),
 	email VARCHAR(100),
-	id_posts INT NOT NULL REFERENCES posts (id_posts)
+	id_posts INT NOT NULL REFERENCES posts (id_posts),
+	id_status INT NOT NULL REFERENCES status (id_status)
 );
 
 CREATE TABLE status(
 	id_status INT PRIMARY KEY,
 	status_name VARCHAR (50),
-);
-
-CREATE TABLE collabStatus(
-    id_collabStatus INT PRIMARY KEY,
-    id_collaborators INT NOT NULL REFERENCES collaborators (id_collaborators),
-    id_status INT NOT NULL REFERENCES status (id_status)
 );
 
 CREATE TABLE schedules (

@@ -31,8 +31,8 @@ public class StatusService {
         return status;
     }
 
-    public Status updateStatus ( int id_status , String status_newName) throws SQLException {
-         return dao.update(id_status, status_newName);
+    public Status updateStatus ( int id_status , String new_status_name) throws SQLException {
+         return dao.update(id_status, new_status_name);
     }
 
     public void deleteStatus (int id_status)throws SQLException{

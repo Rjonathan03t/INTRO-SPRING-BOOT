@@ -9,6 +9,6 @@ public interface StatusDAOInterface {
     Status insert (int id_status , String status_name) throws SQLException;
     List <Status> getAll() throws SQLException;
     Status getById(int id_status) throws SQLException;
-    Status update(int id_status, String status_newName) throws SQLException;
+    Status update(int id_status, String new_status_name) throws SQLException;
     void delete(int id_status) throws SQLException;
 }
