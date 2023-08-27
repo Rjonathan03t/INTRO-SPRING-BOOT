@@ -14,26 +14,26 @@ public class StatusController {
         this.service = service;
     }
 
-    @GetMapping("/get/status")
+    @GetMapping("/status")
     public List<Status> getAllStatus() throws SQLException {
         return service.getAllStatus();
     }
-    @GetMapping("/get/status/{id_status}")
+    @GetMapping("/status/{id_status}")
     public Status getById(@PathVariable int id_status) throws SQLException{
         return service.getStatusById(id_status);
     }
 
-    @PostMapping("/insert/status")
+    @PostMapping("/status")
     public Status insertStatus (@RequestBody Status status) throws SQLException {
         return service.insertStatus(status.getId_status(), status.getStatus_name());
     }
 
-    @PutMapping("/update/status/{id_status}")
+    @PutMapping("/status/{id_status}")
     public Status updateStatus (@PathVariable int id_status , @RequestBody Status status) throws SQLException {
         return service.updateStatus(id_status, status.getStatus_name());
     }
 
-    @DeleteMapping("/delete/status")
+    @DeleteMapping("/status")
     public void deleteStatus ( @RequestBody Status status)throws SQLException{
         service.deleteStatus(status.getId_status());
     }

@@ -11,7 +11,7 @@ CREATE TABLE collaborators (
 	first_name VARCHAR(50),
 	last_name VARCHAR(50),
 	sex CHAR(1) CHECK (sex = 'M' OR sex = 'F'),
-	birth_date DATE,
+	birth_date VARCHAR(100),
 	email VARCHAR(100),
 	id_posts INT NOT NULL REFERENCES posts (id_posts)
 );
