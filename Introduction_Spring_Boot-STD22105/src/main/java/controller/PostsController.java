@@ -1,7 +1,5 @@
 package controller;
-import Service.CollaboratorsService;
 import Service.PostsService;
-import model.Collaborators;
 import model.Posts;
 import org.springframework.web.bind.annotation.*;
 

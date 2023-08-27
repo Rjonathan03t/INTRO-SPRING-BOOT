@@ -13,4 +13,5 @@ public class Posts {
     private String difficulty;
     private int importance;
     private String description;
+
 }
