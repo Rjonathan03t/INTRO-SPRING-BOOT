@@ -17,7 +17,7 @@ public class ConnectionDB {
     @Bean
     public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(
-                "jdbc:postgresql://localhost/intro_spring_boot",
+                "jdbc:postgresql://localhost/test2",
                 username,
                 password
         );
