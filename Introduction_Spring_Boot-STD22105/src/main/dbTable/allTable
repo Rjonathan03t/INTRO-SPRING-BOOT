@@ -1,0 +1,35 @@
+CREATE TABLE posts (
+    id_posts INT PRIMARY KEY,
+    posts_name VARCHAR (50) NOT NULL,
+    difficulty VARCHAR (50) CHECK  (difficulty = 'hard' OR difficulty = 'medium' OR difficulty= 'easy'),
+	importance  INT CHECK (importance > 0 AND importance <= 5),
+	description VARCHAR (100)
+);
+
+CREATE TABLE collaborators (
+    id_collaborators int PRIMARY KEY,
+	first_name VARCHAR(50),
+	last_name VARCHAR(50),
+	sex CHAR(1) CHECK (sex = 'M' OR sex = 'F'),
+	birth_date DATE,
+	email VARCHAR(100),
+	id_posts INT NOT NULL REFERENCES posts (id_posts)
+);
+
+CREATE TABLE status(
+	id_status INT PRIMARY KEY,
+	status_name VARCHAR (50),
+);
+
+CREATE TABLE collabStatus(
+    id_collabStatus INT PRIMARY KEY,
+    id_collaborators INT NOT NULL REFERENCES collaborators (id_collaborators),
+    id_status INT NOT NULL REFERENCES status (id_status)
+);
+
+CREATE TABLE schedules (
+	id_schedules INT PRIMARY KEY,
+	working_time TIMESTAMP,
+	break_time TIMESTAMP,
+	id_posts INT NOT NULL REFERENCES posts (id_posts)
+);

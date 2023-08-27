@@ -18,7 +18,7 @@ public class StatusController {
     public List<Status> getAllStatus() throws SQLException {
         return service.getAllStatus();
     }
-    @GetMapping("/get/status/{id}")
+    @GetMapping("/get/status/{id_status}")
     public Status getById(@PathVariable int id_status) throws SQLException{
         return service.getStatusById(id_status);
     }

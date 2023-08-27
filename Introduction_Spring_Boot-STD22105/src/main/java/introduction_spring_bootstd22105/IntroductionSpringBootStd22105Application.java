@@ -6,12 +6,13 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan({
+		"connectionDB",
 		"controller",
+		"DAOinterface",
 		"introduction_spring_bootstd22105",
 		"model",
 		"repository",
-		"Service",
-		"connectionDB"
+		"Service"
 })
 public class IntroductionSpringBootStd22105Application {
 	public static void main(String[] args) {

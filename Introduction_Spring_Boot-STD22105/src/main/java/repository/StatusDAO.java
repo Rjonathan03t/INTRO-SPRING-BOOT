@@ -1,5 +1,6 @@
 package repository;
 
+import DAOinterface.StatusDAOInterface;
 import org.springframework.stereotype.Repository;
 import model.Status;
 

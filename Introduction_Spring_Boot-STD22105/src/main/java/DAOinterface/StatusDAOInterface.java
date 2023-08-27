@@ -1,4 +1,4 @@
-package repository;
+package DAOinterface;
 
 import model.Status;
 

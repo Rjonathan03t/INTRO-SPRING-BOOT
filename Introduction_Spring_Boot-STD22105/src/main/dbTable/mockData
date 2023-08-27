@@ -1,0 +1,46 @@
+INSERT INTO posts VALUES
+(1,'General manager','hard',10,'Responsible for the strategic direction of the company'),
+(2,'Financial director','hard',9,'Oversees the financial management of the company'),
+(3,'Data Analyst','medium',7,'Collects, analyzes and interprets data'),
+(4,'Designer Graphique','medium',8,'Creates visual elements such as charts'),
+(5,'Security agent','easy',6,'Monitor the places'),
+(6,'Maintenance Worker','easy',5,'Performs maintenance and cleaning tasks'),
+(7,'Software Development Engineer','hard',10,'Designs, develops and tests software');
+
+INSERT INTO collaborators  VALUES
+(1, 'Krystle', 'McRinn', 'F', '2023-08-03', 'kmcrinn0@gmpg.org', 1),
+(2, 'Sergio', 'Andreas', 'M', '2023-02-23', 'sandreas1@tripod.com', 2),
+(3, 'Norton', 'Burbudge', 'M', '2023-12-07', 'nburbudge2@ycombinator.com', 5),
+(4, 'Osbourn', 'Mussard', 'M', '2023-07-15', 'omussard3@tamu.edu', 5),
+(5, 'Row', 'Konke', 'F', '2023-01-21', 'rkonke4@slate.com', 7),
+(6, 'Rodolfo', 'Tooley', 'M', '2023-04-16', 'rtooley5@ibm.com', 7),
+(7, 'Delaney', 'Slaney', 'M', '2023-02-23', 'dslaney6@sbwire.com', 3),
+(8, 'Kennett', 'Tokell', 'M', '2023-12-10', 'ktokell7@engadget.com', 6),
+(9, 'Osmond', 'Van Dale', 'M', '2023-11-14', 'ovandale8@tumblr.com', 3),
+(10, 'Sarette', 'Salter', 'F', '2023-08-04', 'ssalter9@ezinearticles.com', 4);
+
+INSERT INTO status VALUES
+(1,'President'),
+(2,'Specialist'),
+(3,'Employee');
+
+INSERT INTO collabStatus VALUES
+(1,1,1),
+(2,2,2),
+(3,3,2),
+(4,4,2),
+(5,5,2),
+(6,6,2),
+(7,7,3),
+(8,8,1),
+(9,9,2),
+(10,10,3);
+
+INSERT INTO schedules VALUES
+(1, '2023-06-04 17:55:43', '2023-09-05 18:49:32', 6),
+(2, '2023-01-22 17:19:21', '2023-12-12 02:59:44', 3),
+(3, '2023-06-08 12:01:20', '2023-07-18 10:23:49', 2),
+(4, '2023-03-03 13:48:15', '2023-01-17 22:47:21', 4),
+(5, '2023-07-31 00:36:39', '2023-01-10 20:11:23', 1),
+(6, '2023-08-02 22:36:06', '2023-12-29 09:53:44', 7),
+(7, '2023-05-19 02:00:53', '2023-01-14 10:20:04', 5);
