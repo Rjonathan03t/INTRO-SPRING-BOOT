@@ -23,7 +23,6 @@ public class CollaboratorsController {
     public Collaborators getCollabById(@PathVariable int id_collaborators) throws SQLException{
         return service.getCollabById(id_collaborators);
     }
-
     @PostMapping("/collab")
     public Collaborators insertCollab (@RequestBody Collaborators collaborators) throws SQLException {
         return service.insertCollab(
@@ -33,7 +32,8 @@ public class CollaboratorsController {
                 collaborators.getSex(),
                 collaborators.getBirth_date(),
                 collaborators.getEmail(),
-                collaborators.getPosts()
+                collaborators.getPosts(),
+                collaborators.getStatus()
         );
     }
 
@@ -46,7 +46,8 @@ public class CollaboratorsController {
                 collaborators.getSex(),
                 collaborators.getBirth_date(),
                 collaborators.getEmail(),
-                collaborators.getPosts()
+                collaborators.getPosts(),
+                collaborators.getStatus()
         );
     }
 

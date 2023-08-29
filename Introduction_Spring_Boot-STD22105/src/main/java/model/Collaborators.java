@@ -15,4 +15,5 @@ public class Collaborators {
     private String birth_date;
     private String email;
     private int posts;
+    private int status;
 }

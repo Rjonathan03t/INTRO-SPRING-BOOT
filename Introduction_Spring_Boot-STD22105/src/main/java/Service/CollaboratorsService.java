@@ -27,7 +27,8 @@ public class CollaboratorsService {
             String sex,
             String birth_date,
             String email,
-            int posts
+            int posts,
+            int status
     ) throws SQLException{
         return  dao.insert(
                 id_collaborators,
@@ -36,7 +37,8 @@ public class CollaboratorsService {
                 sex,
                 birth_date,
                 email,
-                posts
+                posts,
+                status
         );
     }
 
@@ -55,7 +57,8 @@ public class CollaboratorsService {
             String new_sex,
             String new_birth_date,
             String new_email,
-            int new_posts
+            int new_posts,
+            int new_status
     ) throws SQLException {
         return dao.update(
                 id_collaborators,
@@ -64,7 +67,8 @@ public class CollaboratorsService {
                 new_sex,
                 new_birth_date,
                 new_email,
-                new_posts
+                new_posts,
+                new_status
         );
     }
 

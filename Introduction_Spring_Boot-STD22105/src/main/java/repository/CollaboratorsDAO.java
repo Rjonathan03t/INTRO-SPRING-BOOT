@@ -27,7 +27,8 @@ public class CollaboratorsDAO implements CollaboratorsDAOInterface {
             String sex,
             String birth_date,
             String email,
-            int posts
+            int posts,
+            int status
     ) throws SQLException {
         Collaborators collaborators = new Collaborators(
                 id_collaborators,
@@ -36,7 +37,8 @@ public class CollaboratorsDAO implements CollaboratorsDAOInterface {
                 sex,
                 birth_date,
                 email,
-                posts
+                posts,
+                status
         );
         String sql = "INSERT INTO collaborators values (" +
                 id_collaborators +
@@ -46,6 +48,7 @@ public class CollaboratorsDAO implements CollaboratorsDAOInterface {
                 "','" + birth_date +
                 "','" + email +
                 "'," + posts +
+                "," + status +
                 ")";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.executeUpdate();
@@ -81,7 +84,8 @@ public class CollaboratorsDAO implements CollaboratorsDAOInterface {
                         result.getString("sex"),
                         result.getString("birth_date"),
                         result.getString("email"),
-                        result.getInt("id_posts")
+                        result.getInt("id_posts"),
+                        result.getInt("id_status")
                 );
             }
         }
@@ -96,7 +100,8 @@ public class CollaboratorsDAO implements CollaboratorsDAOInterface {
             String new_sex,
             String new_birth_date,
             String new_email,
-            int new_posts
+            int new_posts,
+            int new_status
     ) throws SQLException {
         Collaborators uCollab = new Collaborators(
                 id_collaborators,
@@ -105,7 +110,8 @@ public class CollaboratorsDAO implements CollaboratorsDAOInterface {
                 new_sex,
                 new_birth_date,
                 new_email,
-                new_posts
+                new_posts,
+                new_status
         );
         String sql = "UPDATE collaborators SET first_name =" +
                 "'" + new_first_name +
@@ -114,6 +120,7 @@ public class CollaboratorsDAO implements CollaboratorsDAOInterface {
                 "' , birth_date = '" + new_birth_date +
                 "' , email = '" + new_email +
                 "' , id_posts = " + new_posts +
+                " , id_status = " + new_status +
                 " WHERE id_collaborators = " + id_collaborators;
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.executeUpdate();
@@ -139,7 +146,8 @@ public class CollaboratorsDAO implements CollaboratorsDAOInterface {
                 result.getString("sex"),
                 result.getString("birth_date"),
                 result.getString("email"),
-                result.getInt("id_posts")
+                result.getInt("id_posts"),
+                result.getInt("id_status")
         ));
     }
 }

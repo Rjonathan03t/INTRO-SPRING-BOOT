@@ -14,7 +14,8 @@ public interface CollaboratorsDAOInterface {
             String sex,
             String birth_date,
             String email,
-            int posts
+            int posts,
+            int status
     ) throws SQLException;
 
     List <Collaborators> getAll() throws SQLException;
@@ -27,7 +28,8 @@ public interface CollaboratorsDAOInterface {
             String new_sex,
             String new_birth_date,
             String new_email,
-            int new_posts
+            int new_posts,
+            int new_status
     ) throws SQLException;
 
     void delete(int id_collaborators) throws SQLException;
