@@ -35,8 +35,8 @@ public class PostsController {
         );
     }
 
-    @PutMapping("/post/{id_posts}")
-    public Posts updatePost (@PathVariable int id_posts, @RequestBody Posts posts) throws SQLException {
+    @PutMapping("/post")
+    public Posts updatePost (@RequestBody Posts posts) throws SQLException {
         return service.updatePost(
                 posts.getId_posts(),
                 posts.getPosts_name(),

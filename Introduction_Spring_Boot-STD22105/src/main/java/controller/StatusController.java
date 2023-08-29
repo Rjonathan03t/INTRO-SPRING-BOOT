@@ -28,9 +28,9 @@ public class StatusController {
         return service.insertStatus(status.getId_status(), status.getStatus_name());
     }
 
-    @PutMapping("/status/{id_status}")
-    public Status updateStatus (@PathVariable int id_status , @RequestBody Status status) throws SQLException {
-        return service.updateStatus(id_status, status.getStatus_name());
+    @PutMapping("/status")
+    public Status updateStatus (@RequestBody Status status) throws SQLException {
+        return service.updateStatus(status.getId_status(), status.getStatus_name());
     }
 
     @DeleteMapping("/status")

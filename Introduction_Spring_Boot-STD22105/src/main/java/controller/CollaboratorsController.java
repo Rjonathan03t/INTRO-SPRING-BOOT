@@ -37,8 +37,8 @@ public class CollaboratorsController {
         );
     }
 
-    @PutMapping("/collab/{id_collaborators}")
-    public Collaborators updateCollab (@PathVariable int id_collaborators, @RequestBody Collaborators collaborators) throws SQLException {
+    @PutMapping("/collab")
+    public Collaborators updateCollab (@RequestBody Collaborators collaborators) throws SQLException {
         return service.updateCollab(
                 collaborators.getId_collaborators(),
                 collaborators.getFirst_name(),
