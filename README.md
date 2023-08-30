@@ -15,4 +15,4 @@ and at /mockData you have to copypaste these mock data to complete all  tables.
 
 # OTHER INFO
 I used MAVEN for the project management , and LOMBOK for the method getter, setter ,toString and equalsAndHashCode.
-I used Java 17 and worked on jMerise for the database mcd.
+I used Java 17 , worked on jMerise for the database mcd, used postman to test my application.
