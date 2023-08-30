@@ -35,10 +35,10 @@ public class SchedulesController {
         );
     }
 
-    @PutMapping("/schedule")
-    public Schedules updateSchedules(@RequestBody Schedules schedules) throws SQLException {
+    @PutMapping("/schedule/{id_schedules}")
+    public Schedules updateSchedules(@PathVariable int id_schedules,@RequestBody Schedules schedules) throws SQLException {
         return service.updateSchedules(
-                schedules.getId_Schedules(),
+                id_schedules,
                 schedules.getWorking_time(),
                 schedules.getBreak_time(),
                 schedules.getId_posts()
